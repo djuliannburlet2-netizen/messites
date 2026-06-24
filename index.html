@@ -287,7 +287,7 @@
     const f = FLOORS[floorIdx];
     const fs = state.floors[floorIdx];
     if(!fs.unlocked) return 0;
-    return f.baseIncome * fs.employees;
+    return f.baseIncome * (Math.pow(1.2, fs.employees) - 1) / 0.2;
   }
 
   function totalIncomePerSecond(){
