@@ -320,7 +320,7 @@
     const cost = employeeCost(i);
     if(state.money >= cost){
       state.money -= cost;
-      fs.employees += 1;
+      fs.employees += Math.ceil(fs.employees * 0.1) + 1;
       render();
     }
   }
