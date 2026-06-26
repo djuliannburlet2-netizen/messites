@@ -326,15 +326,16 @@
   }
 
   function selectFloor(i){
-    if(!state.floors[i].unlocked && i !== nextLockedIndex()) return;
-    if(state.floors[i].unlocked){
-      state.activeFloor = i;
-      render();
-    } else if(i === nextLockedIndex()){
-      tryUnlock(i);
-    }
-  }
+    console.log("Clic sur l'étage", i);
 
+    if(state.floors[i].unlocked){
+        state.activeFloor = i;
+        render();
+        return;
+    }
+
+    tryUnlock(i);
+}
   function tryUnlock(i){
     const f = FLOORS[i];
     if(state.floors[i].unlocked) return;
